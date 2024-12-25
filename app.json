@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "react-scan-ext",
-    "slug": "react-scan-ext",
+    "name": "React Scan",
+    "slug": "react-scan",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -9,7 +9,12 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "appleTeamId": "QQ57RJ5UTD",
+      "supportsTablet": true,
+      "bundleIdentifier": "com.bacon.react-scan-ext",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -32,10 +37,16 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ]
+      ],
+      "@bacons/apple-targets"
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "f4793021-d725-4f1d-a5c0-6adfedfc8260"
+      }
     }
   }
 }
