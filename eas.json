@@ -13,8 +13,7 @@
     },
     "production": {
       "autoIncrement": true,
-      "resourceClass": "large",
-      "prebuildCommand": "npx expo prebuild --template node_modules/@bacons/apple-targets/prebuild-blank.tgz"
+      "resourceClass": "large"
     }
   },
   "submit": {
