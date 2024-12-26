@@ -4,7 +4,7 @@
         "description": "The display name for the extension."
     },
     "extension_description": {
-        "message": "This is React Scan. You should tell us what your extension does here.",
+        "message": "Scan for React performance issues and eliminate slow renders in your app.",
         "description": "Description of what the extension does."
     }
 }
