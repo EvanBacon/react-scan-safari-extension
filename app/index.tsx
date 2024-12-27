@@ -1,98 +1,69 @@
-import { Link } from "expo-router";
-import React from "react";
-import { StyleSheet, Text, View, ScrollView } from "react-native";
-
+import { BodyScrollView } from "@/components/ui/BodyScrollView";
+import * as Form from "@/components/ui/Form";
+import { IconSymbol } from "@/components/ui/IconSymbol";
 import * as AC from "@bacons/apple-colors";
-import { SymbolView } from "expo-symbols";
-const App = () => {
+import { Link } from "expo-router";
+import { Image, Text, View } from "react-native";
+import * as Application from "expo-application";
+export default function Page() {
   return (
-    <ScrollView
-      contentInsetAdjustmentBehavior="automatic"
-      contentContainerStyle={styles.container}
+    <BodyScrollView
+      contentContainerStyle={{
+        padding: 16,
+        gap: 24,
+      }}
     >
-      <Text style={styles.description}>
-        Follow the steps below to set up the accompanying iOS Safari Extension
-        for React Scan.
-      </Text>
-      <View style={styles.steps}>
-        <Text style={{ color: AC.label }}>
-          1. Open the Settings app and go to Apps → Safari → Extensions → React
-          Scan.
-        </Text>
-        <Text style={{ color: AC.label }}>
-          2. Toggle on{" "}
-          <Text style={{ fontWeight: "bold" }}>Allow Extensions</Text> and{" "}
-          <Text style={{ fontWeight: "bold" }}>Allow in Private Browsing</Text>.
-        </Text>
-        <Text style={{ color: AC.label }}>
-          3. Under <Text style={{ fontWeight: "bold" }}>Permissions</Text>, set
-          All Websites to <Text style={{ fontWeight: "bold" }}>Allow</Text>.
-        </Text>
-        <Text style={{ color: AC.label }}>
-          4. Open Safari and visit{" "}
-          <Link href="https://evanbacon.dev">any webpage</Link> (some websites
-          do not allow scripting).
-        </Text>
-        <Text style={{ color: AC.label }}>
-          5. Tap the puzzle piece icon{" "}
-          <SymbolView
-            name="puzzlepiece.extension.fill"
-            style={{ alignSelf: "center" }}
-          />{" "}
-          in the address bar.
-        </Text>
-        <Text style={{ color: AC.label }}>
-          6. Select <Text style={{ fontWeight: "bold" }}>React Scan.</Text>
-        </Text>
-        <Text style={{ color: AC.label }}>
-          7. If prompted, tap{" "}
-          <Text style={{ fontWeight: "bold" }}>Always Allow.</Text>
-        </Text>
-        <Text style={{ color: AC.label }}>
-          8. Confirm by tapping{" "}
-          <Text style={{ fontWeight: "bold" }}>
-            Always Allow on Every Website.
+      <Form.Section>
+        <View style={{ alignItems: "center", gap: 8, padding: 16 }}>
+          <Image
+            source={{ uri: "https://github.com/expo.png" }}
+            style={{
+              aspectRatio: 1,
+              height: 64,
+              borderRadius: 8,
+            }}
+          />
+          <Form.Text
+            style={{
+              fontSize: 20,
+              fontWeight: "600",
+            }}
+          >
+            React Scan for Safari
+          </Form.Text>
+          <Text style={{ textAlign: "center", fontSize: 14, color: AC.label }}>
+            React Scan automatically detects performance issues in your React
+            app
           </Text>
-        </Text>
-        <Text style={{ color: AC.label }}>
-          9. Security notice: This project is entirely{" "}
-          <Link href="https://github.com/EvanBacon/react-scan-safari-extension">
-            open source
-          </Link>
-        </Text>
-      </View>
-    </ScrollView>
+        </View>
+      </Form.Section>
+
+      <Form.Section>
+        {/* Table style: | A   B |*/}
+        <Link href="/ext-guide">Setup Instructions</Link>
+      </Form.Section>
+
+      <Form.Section title="Info">
+        <Form.Link target="_blank" href="https://x.com/baconbrix">
+          Evan Bacon
+        </Form.Link>
+        <Form.Link target="_blank" href="https://react-scan.com/">
+          React Scan
+        </Form.Link>
+        <Form.Link
+          target="_blank"
+          href="https://github.com/EvanBacon/react-scan-safari-extension"
+        >
+          Source code
+        </Form.Link>
+      </Form.Section>
+
+      <Form.Section title="About">
+        <Form.Text hint={Application.nativeApplicationVersion}>
+          Version
+        </Form.Text>
+        <Text hint={Application.nativeBuildVersion}>Build</Text>
+      </Form.Section>
+    </BodyScrollView>
   );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    fontFamily: "Arial, sans-serif",
-    padding: 20,
-    maxWidth: 800,
-    backgroundColor: AC.systemBackground,
-
-    textAlign: "center",
-  },
-  title: {
-    fontSize: 40,
-    color: "#333",
-  },
-  description: {
-    fontSize: 20,
-    color: "#666",
-  },
-  steps: {
-    color: AC.label,
-    textAlign: "left",
-    marginVertical: 20,
-    paddingHorizontal: 20,
-  },
-  note: {
-    fontSize: 16,
-    color: "#999",
-    marginTop: 20,
-  },
-});
-
-export default App;
+}
