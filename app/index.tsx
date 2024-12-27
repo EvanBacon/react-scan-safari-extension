@@ -1,10 +1,10 @@
 import { BodyScrollView } from "@/components/ui/BodyScrollView";
 import * as Form from "@/components/ui/Form";
-import { IconSymbol } from "@/components/ui/IconSymbol";
 import * as AC from "@bacons/apple-colors";
 import { Link } from "expo-router";
 import { Image, Text, View } from "react-native";
 import * as Application from "expo-application";
+
 export default function Page() {
   return (
     <BodyScrollView
@@ -62,7 +62,7 @@ export default function Page() {
         <Form.Text hint={Application.nativeApplicationVersion}>
           Version
         </Form.Text>
-        <Text hint={Application.nativeBuildVersion}>Build</Text>
+        <Form.Text hint={Application.nativeBuildVersion}>Build</Form.Text>
       </Form.Section>
     </BodyScrollView>
   );

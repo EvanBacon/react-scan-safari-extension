@@ -1,9 +1,8 @@
 import { BodyScrollView } from "@/components/ui/BodyScrollView";
 import * as Form from "@/components/ui/Form";
-import { IconSymbol } from "@/components/ui/IconSymbol";
 import * as AC from "@bacons/apple-colors";
 import { Link } from "expo-router";
-import { Image, Text, View } from "react-native";
+import { Text } from "react-native";
 
 export default function Page() {
   return (
