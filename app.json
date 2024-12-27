@@ -13,7 +13,8 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.bacon.react-scan-ext",
       "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "UIViewControllerBasedStatusBarAppearance": true
       }
     },
     "android": {
